@@ -8,7 +8,7 @@ let
     rise = pyp.buildPythonPackage rec {
       name = "RISE-${version}";
       version = "4.0.0b1";
- 
+
       src = pkgs.fetchFromGitHub {
         owner = "damianavila";
         repo = "RISE";
@@ -21,7 +21,7 @@ let
 
 in
 
-buildPythonPackage { 
+pyp.buildPythonPackage {
   name = "${envname}-env";
   buildInputs = [
      python
@@ -43,7 +43,6 @@ buildPythonPackage {
     numpy
     scipy
     pyside
-    sqlite3
     readline
     numpydoc
     virtualenv
